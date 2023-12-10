@@ -1,0 +1,40 @@
+{
+    "name": "@yanqirenshi/manipulater",
+    "version": "0.0.1",
+    "description": "See `src/index.html`",
+    "main": "dist/index.js",
+    "directories": {
+        "doc": "docs",
+        "example": "example"
+    },
+    "scripts": {
+        "transpile": "babel src -d dist --copy-files",
+        "prepublishOnly": "npm run transpile"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/yanqirenshi/Manipulater.git"
+    },
+    "author": "yanqirenshi@gmail.com",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/yanqirenshi/Manipulater/issues"
+    },
+    "homepage": "https://github.com/yanqirenshi/Manipulater#readme",
+    "peerDependencies": {
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.12.10",
+        "@babel/core": "^7.12.10",
+        "@babel/preset-env": "^7.12.11",
+        "@babel/preset-react": "^7.12.10",
+        "babel-loader": "^8.2.2"
+    },
+    "dependencies": {
+        "@emotion/react": "^11.11.1",
+        "@emotion/styled": "^11.11.0",
+        "@mui/material": "^5.14.20"
+    }
+}

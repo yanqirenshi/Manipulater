@@ -1,3 +1,4 @@
-import Manipulater from 'Manipulater.js';
+import Operators from './components/Operators.js';
+export {default as Leaf} from './components/Leaf.js';
 
-export default Manipulater;
+export default Operators;

@@ -5,7 +5,7 @@ import Branch from './Operators/Branch.js';
 
 import operator from '../js/operator.js';
 
-export default function Operators (props) {
+export default function Manipulater (props) {
     const actions     = props.actions;
     const operators   = props.operators;
     const window_size = props.window_size;

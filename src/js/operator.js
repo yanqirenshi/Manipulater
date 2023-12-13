@@ -1,4 +1,6 @@
-import * as util from '../../../libs/yutils/index.js';
+import Beach from '@yanqirenshi/beach';
+
+const util = new Beach();
 
 class Operators {
     initialize (window_size, operators) {

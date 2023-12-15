@@ -1,3 +1,5 @@
+import * as React from 'react';
+
 import Beach from '@yanqirenshi/beach';
 
 const util = new Beach();

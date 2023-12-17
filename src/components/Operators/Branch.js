@@ -1,3 +1,5 @@
+import * as React from 'react';
+
 import Box from '@mui/material/Box';
 
 // https://www.granfairs.com/blog/staff/make-triangle-with-css

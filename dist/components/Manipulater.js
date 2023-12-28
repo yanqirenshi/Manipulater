@@ -19,7 +19,11 @@ function Manipulater(props) {
   var leafs = props.leafs;
   React.useEffect(function () {
     if (!window_size) return;
-    if (!operators.initialized) actions.operator.change(_operator["default"].initialize(window_size, operators));
+    if (!operators.initialized) {
+      actions.operator.change(_operator["default"].initialize(window_size, operators));
+    } else if (window_size.w !== _operator["default"].window_size.w || window_size.h !== _operator["default"].window_size.h) {
+      actions.operator.change(_operator["default"].initialize(window_size, operators));
+    }
   }, [window_size, actions.operator, operators]);
   if (!window_size) return null;
   var clickRoot = function clickRoot(code) {

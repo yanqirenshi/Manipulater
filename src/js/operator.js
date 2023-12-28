@@ -5,12 +5,19 @@ import Beach from '@yanqirenshi/beach';
 const util = new Beach();
 
 class Operators {
+    constructor () {
+        this.window_size = { w: null, h: null };
+    }
     initialize (window_size, operators) {
         const new_operators = util.cp(operators);
 
         new_operators.initialized = util.ts();
 
-        new_operators.list = operator.calRootPos(window_size.w, window_size.h, operators.list);
+        new_operators.list
+            = operator.calRootPos(
+                window_size.w,
+                window_size.h,
+                operators.list);
 
         return new_operators;
     }
@@ -28,6 +35,9 @@ class Operators {
     //     w1            w2            w3     -   -
     //
     calRootPos (w, h, operators=[]) {
+        this.window_size.w = w;
+        this.window_size.h = h;
+
         const size = operators.length;
 
         if (size===0) return [];

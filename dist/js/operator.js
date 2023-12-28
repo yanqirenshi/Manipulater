@@ -19,6 +19,10 @@ var util = new _beach["default"]();
 var Operators = /*#__PURE__*/function () {
   function Operators() {
     _classCallCheck(this, Operators);
+    this.window_size = {
+      w: null,
+      h: null
+    };
   }
   _createClass(Operators, [{
     key: "initialize",
@@ -45,6 +49,8 @@ var Operators = /*#__PURE__*/function () {
     key: "calRootPos",
     value: function calRootPos(w, h) {
       var operators = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : [];
+      this.window_size.w = w;
+      this.window_size.h = h;
       var size = operators.length;
       if (size === 0) return [];
 

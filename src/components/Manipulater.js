@@ -15,9 +15,18 @@ export default function Manipulater (props) {
         if (!window_size)
             return;
 
-        if (!operators.initialized)
+        if (!operators.initialized) {
+
             actions.operator.change(
                 operator.initialize(window_size, operators));
+
+        } else if (window_size.w !== operator.window_size.w ||
+                   window_size.h !== operator.window_size.h){
+
+            actions.operator.change(
+                operator.initialize(window_size, operators));
+
+        }
     }, [window_size, actions.operator, operators]);
 
     if (!window_size) return null;

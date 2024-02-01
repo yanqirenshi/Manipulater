@@ -59,6 +59,8 @@ class Operators {
         return operators.map(operator=> {
             const new_operator = util.cp(operator);
 
+            new_operator.label = operator.label;
+
             // cal x
             new_operator.position.x = start_x;
             start_x += new_operator.size.w + s;

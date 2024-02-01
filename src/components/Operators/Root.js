@@ -38,12 +38,6 @@ export default function Root (props) {
 
     const val = operator.label.val;
 
-    console.log('============================');
-    console.log(val);
-    console.log(typeof val==='function');
-    console.log(typeof val!=='function');
-    console.log(operator);
-
     return (
         <Box sx={sx_base}
              onClick={click}>

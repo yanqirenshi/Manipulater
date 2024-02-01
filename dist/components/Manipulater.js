@@ -17,6 +17,8 @@ function Manipulater(props) {
   var operators = props.operators;
   var window_size = props.window_size;
   var leafs = props.leafs;
+  console.log('============================');
+  console.log(operators);
   React.useEffect(function () {
     if (!window_size) return;
     if (!operators.initialized) {

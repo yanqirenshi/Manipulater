@@ -69,6 +69,7 @@ var Operators = /*#__PURE__*/function () {
       // operator 毎 の position を計算する。
       return operators.map(function (operator) {
         var new_operator = util.cp(operator);
+        new_operator.label = operator.label;
 
         // cal x
         new_operator.position.x = start_x;

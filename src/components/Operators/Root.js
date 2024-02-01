@@ -14,9 +14,6 @@ export default function Root (props) {
 
     const click = ()=> onClick(operator.code);
 
-    console.log('--------------------');
-    console.log(operator);
-
     const sx_base = {
         position: 'fixed',
         left: x,
@@ -39,14 +36,14 @@ export default function Root (props) {
         alignItems: 'center',
     };
 
-    console.log(sx_base);
-    console.log(sx_content);
+    const val = operator.label.val;
 
     return (
         <Box sx={sx_base}
              onClick={click}>
           <Box sx={sx_content}>
-            {operator.label.val}
+            {typeof val==='function' && val()}
+            {typeof val!=='function' && val}
           </Box>
         </Box>
     );

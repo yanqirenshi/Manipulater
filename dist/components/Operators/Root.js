@@ -22,8 +22,6 @@ function Root(props) {
   var click = function click() {
     return onClick(operator.code);
   };
-  console.log('--------------------');
-  console.log(operator);
   var sx_base = {
     position: 'fixed',
     left: x,
@@ -44,12 +42,11 @@ function Root(props) {
     justifyContent: 'center',
     alignItems: 'center'
   };
-  console.log(sx_base);
-  console.log(sx_content);
+  var val = operator.label.val;
   return /*#__PURE__*/React.createElement(_Box["default"], {
     sx: sx_base,
     onClick: click
   }, /*#__PURE__*/React.createElement(_Box["default"], {
     sx: sx_content
-  }, operator.label.val));
+  }, typeof val === 'function' && val(), typeof val !== 'function' && val));
 }

@@ -22,28 +22,34 @@ function Root(props) {
   var click = function click() {
     return onClick(operator.code);
   };
+  console.log('--------------------');
+  console.log(operator);
+  var sx_base = {
+    position: 'fixed',
+    left: x,
+    top: y,
+    maxWidth: width + 'px',
+    maxHeight: height + 'px',
+    borderRadius: width + 'px',
+    padding: border_width + 'px',
+    background: active ? "rgba(8, 156, 163, 1.0)" : "rgba(8, 156, 163, 0.2)",
+    zIndex: 888
+  };
+  var sx_content = {
+    width: width - border_width * 2 + 'px',
+    height: height - border_width * 2 + 'px',
+    borderRadius: width - border_width * 2 + 'px',
+    background: '#fff',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
+  };
+  console.log(sx_base);
+  console.log(sx_content);
   return /*#__PURE__*/React.createElement(_Box["default"], {
-    sx: {
-      position: 'fixed',
-      left: x,
-      top: y,
-      maxWidth: width + 'px',
-      maxHeight: height + 'px',
-      borderRadius: width + 'px',
-      padding: border_width + 'px',
-      background: active ? "rgba(8, 156, 163, 1.0)" : "rgba(8, 156, 163, 0.2)",
-      zIndex: 888
-    },
+    sx: sx_base,
     onClick: click
   }, /*#__PURE__*/React.createElement(_Box["default"], {
-    sx: {
-      width: width - border_width * 2 + 'px',
-      height: height - border_width * 2 + 'px',
-      borderRadius: width - border_width * 2 + 'px',
-      background: '#fff',
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center'
-    }
-  }, /*#__PURE__*/React.createElement("p", null, operator.label.val)));
+    sx: sx_content
+  }, operator.label.val));
 }

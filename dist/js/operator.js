@@ -28,6 +28,7 @@ var Operators = /*#__PURE__*/function () {
     key: "initialize",
     value: function initialize(window_size, operators) {
       var new_operators = util.cp(operators);
+      new_operators.list = operators.list;
       new_operators.initialized = util.ts();
       new_operators.list = operator.calRootPos(window_size.w, window_size.h, operators.list);
       return new_operators;

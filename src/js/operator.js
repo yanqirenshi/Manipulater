@@ -11,6 +11,8 @@ class Operators {
     initialize (window_size, operators) {
         const new_operators = util.cp(operators);
 
+        new_operators.list = operators.list;
+
         new_operators.initialized = util.ts();
 
         new_operators.list

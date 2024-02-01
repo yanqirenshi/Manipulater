@@ -43,6 +43,11 @@ function Root(props) {
     alignItems: 'center'
   };
   var val = operator.label.val;
+  console.log('============================');
+  console.log(val);
+  console.log(typeof val === 'function');
+  console.log(typeof val !== 'function');
+  console.log(operator);
   return /*#__PURE__*/React.createElement(_Box["default"], {
     sx: sx_base,
     onClick: click

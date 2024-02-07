@@ -11,9 +11,6 @@ export default function Manipulater (props) {
     const window_size = props.window_size;
     const leafs = props.leafs;
 
-    console.log('============================');
-    console.log(operators);
-
     React.useEffect(()=> {
         if (!window_size)
             return;

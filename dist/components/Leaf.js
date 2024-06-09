@@ -23,7 +23,7 @@ function Leaf(props) {
       top: y,
       padding: '5px',
       borderRadius: '5px',
-      zIndex: 888,
+      zIndex: 888888,
       background: 'rgba(8, 156, 163, 1.0)'
     }
   }, /*#__PURE__*/React.createElement(_Box["default"], {

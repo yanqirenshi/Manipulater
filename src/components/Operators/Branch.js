@@ -11,17 +11,18 @@ export default function Branch (props) {
     const w_center = root.position.x + (root.size.w / 2);
 
     const x = w_center - (22 / 2) - 3;
-    const y = root.position.y - 33;
+    const y = root.position.y - 28;
 
     return (
         <Box sx={{
-                 position: 'fixed',
-                 left: x,
-                 top:  y,
-                 borderTop:   '27px solid rgba(8, 156, 163, 1.0)',
-                 borderRight: '15px solid transparent',
-                 borderLeft:  '15px solid transparent',
-             }}>
+            position: 'fixed',
+            left: x,
+            top:  y,
+            borderTop:   '27px solid rgba(8, 156, 163, 1.0)',
+            borderRight: '15px solid transparent',
+            borderLeft:  '15px solid transparent',
+            zIndex: 888888,
+        }}>
         </Box>
     );
 }

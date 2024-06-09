@@ -17,7 +17,7 @@ function Branch(props) {
   var root = props.root;
   var w_center = root.position.x + root.size.w / 2;
   var x = w_center - 22 / 2 - 3;
-  var y = root.position.y - 33;
+  var y = root.position.y - 28;
   return /*#__PURE__*/React.createElement(_Box["default"], {
     sx: {
       position: 'fixed',
@@ -25,7 +25,8 @@ function Branch(props) {
       top: y,
       borderTop: '27px solid rgba(8, 156, 163, 1.0)',
       borderRight: '15px solid transparent',
-      borderLeft: '15px solid transparent'
+      borderLeft: '15px solid transparent',
+      zIndex: 888888
     }
   });
 }

@@ -10,6 +10,7 @@ import Groups3Icon from '@mui/icons-material/Groups3';
 import PrecisionManufacturingIcon from '@mui/icons-material/PrecisionManufacturing';
 import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 import Tooltip from '@mui/material/Tooltip';
+import WorkIcon from '@mui/icons-material/Work';
 
 export default function Root (props) {
     const operator = props.operator;
@@ -103,6 +104,9 @@ function iconContents (operator, active) {
     if ('search'===code)
         return <SearchIcon sx={sx}/>;
 
+    if ('backlogs'===code)
+        return <WorkIcon sx={sx}/>;
+
     if ('github'===code)
         return <GitHubIcon sx={sx}/>;
 
@@ -131,4 +135,3 @@ function text (text, active) {
         </S>
     );
 }
-

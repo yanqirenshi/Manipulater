@@ -21,7 +21,7 @@ export default function Branch (props) {
             borderTop:   '27px solid rgba(8, 156, 163, 1.0)',
             borderRight: '15px solid transparent',
             borderLeft:  '15px solid transparent',
-            zIndex: 888888,
+            zIndex: 888,
         }}>
         </Box>
     );

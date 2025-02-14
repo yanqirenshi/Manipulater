@@ -33,7 +33,7 @@ export default function Root (props) {
         borderRadius: width + 'px',
         padding: border_width + 'px',
         background: active ? "rgba(8, 156, 163, 1.0)" : "#888",
-        zIndex: 888888,
+        zIndex: 888,
     };
 
     const sx_content = {

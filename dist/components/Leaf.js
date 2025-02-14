@@ -20,7 +20,7 @@ function Leaf(props) {
       top: y,
       padding: '5px',
       borderRadius: '5px',
-      zIndex: 888888,
+      zIndex: 888,
       background: 'rgba(8, 156, 163, 1.0)'
     }
   }, /*#__PURE__*/_react["default"].createElement(_Box["default"], {

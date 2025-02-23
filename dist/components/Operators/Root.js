@@ -17,6 +17,12 @@ var _SupportAgent = _interopRequireDefault(require("@mui/icons-material/SupportA
 var _Tooltip = _interopRequireDefault(require("@mui/material/Tooltip"));
 var _Work = _interopRequireDefault(require("@mui/icons-material/Work"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
 function Root(props) {
   var operator = props.operator;
   var onClick = props.onClick;
@@ -52,6 +58,7 @@ function Root(props) {
   };
   var val = operator.label.val;
   var type = operator.label.type;
+  var sx = operator.label.sx;
   return /*#__PURE__*/_react["default"].createElement(_Box["default"], {
     sx: sx_base,
     onClick: click
@@ -59,7 +66,7 @@ function Root(props) {
     sx: sx_content
   }, val()), type === 'text' && /*#__PURE__*/_react["default"].createElement(_Box["default"], {
     sx: sx_content
-  }, text(val, active, theme_color)), type === 'icon' && icon(operator, active, val, sx_content, theme_color));
+  }, text(val, active, sx, theme_color)), type === 'icon' && icon(operator, active, val, sx_content, theme_color));
 }
 function icon(operator, active, val, sx, theme_color) {
   if (active) return /*#__PURE__*/_react["default"].createElement(_Box["default"], {
@@ -104,11 +111,13 @@ function iconContents(operator, active, theme_color) {
   });
   return operator.label.val;
 }
-function text(text, active, theme_color) {
+function text(text, active) {
+  var sx = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+  var theme_color = arguments.length > 3 ? arguments[3] : undefined;
   return /*#__PURE__*/_react["default"].createElement(_Typography["default"], {
-    sx: {
+    sx: _objectSpread(_objectSpread({}, {
       fontSize: 22,
       color: active ? "rgba(".concat(theme_color.r, ", ").concat(theme_color.g, ", ").concat(theme_color.b, ", 1.0)") : '#888'
-    }
+    }), sx)
   }, text);
 }

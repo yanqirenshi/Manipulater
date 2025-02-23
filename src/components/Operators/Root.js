@@ -50,6 +50,7 @@ export default function Root (props) {
 
     const val = operator.label.val;
     const type = operator.label.type;
+    const sx = operator.label.sx;
 
     return (
         <Box sx={sx_base}
@@ -62,7 +63,7 @@ export default function Root (props) {
 
           {type==='text' &&
            <Box sx={sx_content}>
-             {text(val, active, theme_color)}
+             {text(val, active, sx, theme_color)}
            </Box>}
 
           {type==='icon'
@@ -127,11 +128,14 @@ function iconContents (operator, active, theme_color) {
     return operator.label.val;
 }
 
-function text (text, active, theme_color) {
+function text (text, active, sx={}, theme_color) {
     return (
         <S sx={{
-            fontSize:22,
-            color: active ? `rgba(${theme_color.r}, ${theme_color.g}, ${theme_color.b}, 1.0)` : '#888',
+            ...{
+                fontSize:22,
+                color: active ? `rgba(${theme_color.r}, ${theme_color.g}, ${theme_color.b}, 1.0)` : '#888',
+            },
+            ...sx,
         }}>
           {text}
         </S>

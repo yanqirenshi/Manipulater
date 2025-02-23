@@ -13,6 +13,12 @@ function Leaf(props) {
   var w = props.w;
   var h = props.h;
   var children = props.children;
+  var theme_color = props.theme_color || {
+    r: 8,
+    g: 156,
+    b: 163
+  };
+  ;
   return /*#__PURE__*/_react["default"].createElement(_Box["default"], {
     sx: {
       position: 'fixed',
@@ -21,7 +27,7 @@ function Leaf(props) {
       padding: '5px',
       borderRadius: '5px',
       zIndex: 888,
-      background: 'rgba(8, 156, 163, 1.0)'
+      background: "rgba(".concat(theme_color.r, ", ").concat(theme_color.g, ", ").concat(theme_color.b, ", 1.0)")
     }
   }, /*#__PURE__*/_react["default"].createElement(_Box["default"], {
     sx: {

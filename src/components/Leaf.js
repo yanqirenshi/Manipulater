@@ -8,6 +8,7 @@ export default function Leaf (props) {
     const w = props.w;
     const h = props.h;
     const children = props.children;
+    const theme_color = props.theme_color || { r: 8, g: 156, b: 163 };;
 
     return (
         <Box sx={{
@@ -17,7 +18,7 @@ export default function Leaf (props) {
                  padding: '5px',
                  borderRadius: '5px',
                  zIndex: 888,
-                 background: 'rgba(8, 156, 163, 1.0)',
+                 background: `rgba(${theme_color.r}, ${theme_color.g}, ${theme_color.b}, 1.0)`,
              }}>
 
           <Box sx={{

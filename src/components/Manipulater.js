@@ -9,7 +9,8 @@ export default function Manipulater (props) {
     const actions     = props.actions;
     const operators   = props.operators;
     const window_size = props.window_size;
-    const leafs = props.leafs;
+    const leafs       = props.leafs;
+    const theme_color = props.theme_color || { r: 8, g: 156, b: 163 };
 
     React.useEffect(()=> {
         if (!window_size)
@@ -40,7 +41,8 @@ export default function Manipulater (props) {
         <>
           {selected_operator &&
            <>
-             <Branch root={selected_operator}/>
+             <Branch root={selected_operator}
+                     theme_color={theme_color}/>
              {leafs(selected_operator)}
            </>}
 
@@ -50,7 +52,8 @@ export default function Manipulater (props) {
                         operator={operator}
                         active={operator.code===operators.active}
                         actions={actions}
-                        onClick={clickRoot}/>
+                        onClick={clickRoot}
+                        theme_color={theme_color}/>
               );
           })}
         </>

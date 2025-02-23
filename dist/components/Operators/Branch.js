@@ -12,6 +12,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 
 function Branch(props) {
   var root = props.root;
+  var theme_color = props.theme_color;
   var w_center = root.position.x + root.size.w / 2;
   var x = w_center - 22 / 2 - 3;
   var y = root.position.y - 28;
@@ -20,7 +21,7 @@ function Branch(props) {
       position: 'fixed',
       left: x,
       top: y,
-      borderTop: '27px solid rgba(8, 156, 163, 1.0)',
+      borderTop: "27px solid rgba(".concat(theme_color.r, ", ").concat(theme_color.g, ", ").concat(theme_color.b, ", 1.0)"),
       borderRight: '15px solid transparent',
       borderLeft: '15px solid transparent',
       zIndex: 888

@@ -7,6 +7,7 @@ import Box from '@mui/material/Box';
 
 export default function Branch (props) {
     const root = props.root;
+    const theme_color = props.theme_color;
 
     const w_center = root.position.x + (root.size.w / 2);
 
@@ -18,7 +19,7 @@ export default function Branch (props) {
             position: 'fixed',
             left: x,
             top:  y,
-            borderTop:   '27px solid rgba(8, 156, 163, 1.0)',
+            borderTop:   `27px solid rgba(${theme_color.r}, ${theme_color.g}, ${theme_color.b}, 1.0)`,
             borderRight: '15px solid transparent',
             borderLeft:  '15px solid transparent',
             zIndex: 888,

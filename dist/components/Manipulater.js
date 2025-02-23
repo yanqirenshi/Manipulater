@@ -14,6 +14,11 @@ function Manipulater(props) {
   var operators = props.operators;
   var window_size = props.window_size;
   var leafs = props.leafs;
+  var theme_color = props.theme_color || {
+    r: 8,
+    g: 156,
+    b: 163
+  };
   _react["default"].useEffect(function () {
     if (!window_size) return;
     if (!operators.initialized) {
@@ -28,14 +33,16 @@ function Manipulater(props) {
   };
   var selected_operator = _operator["default"].selectedOperator(operators);
   return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, selected_operator && /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_Branch["default"], {
-    root: selected_operator
+    root: selected_operator,
+    theme_color: theme_color
   }), leafs(selected_operator)), operators.list.map(function (operator) {
     return /*#__PURE__*/_react["default"].createElement(_Root["default"], {
       key: operator.code,
       operator: operator,
       active: operator.code === operators.active,
       actions: actions,
-      onClick: clickRoot
+      onClick: clickRoot,
+      theme_color: theme_color
     });
   }));
 }

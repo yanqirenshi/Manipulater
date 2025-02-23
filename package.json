@@ -1,6 +1,6 @@
 {
     "name": "@yanqirenshi/manipulater",
-    "version": "0.0.16",
+    "version": "0.0.17",
     "description": "See `src/index.html`",
     "main": "dist/index.js",
     "directories": {

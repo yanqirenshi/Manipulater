@@ -16,6 +16,8 @@ export default function Root (props) {
     const operator = props.operator;
     const onClick  = props.onClick;
     const active   = props.active;
+    const theme_color = props.theme_color;
+
     const border_width = operator.border.w;
     const width        = operator.size.w;
     const height       = operator.size.h;
@@ -32,7 +34,7 @@ export default function Root (props) {
         maxHeight: height + 'px',
         borderRadius: width + 'px',
         padding: border_width + 'px',
-        background: active ? "rgba(8, 156, 163, 1.0)" : "#888",
+        background: active ? `rgba(${theme_color.r}, ${theme_color.g}, ${theme_color.b}, 1.0)` : "#888",
         zIndex: 888,
     };
 
@@ -60,34 +62,34 @@ export default function Root (props) {
 
           {type==='text' &&
            <Box sx={sx_content}>
-             {text(val, active)}
+             {text(val, active, theme_color)}
            </Box>}
 
           {type==='icon'
-           && icon(operator, active, val, sx_content)}
+           && icon(operator, active, val, sx_content, theme_color)}
 
         </Box>
     );
 }
 
-function icon (operator, active, val, sx) {
+function icon (operator, active, val, sx, theme_color) {
     if (active)
         return (
             <Box sx={sx}>
-              {iconContents(operator, active)}
+              {iconContents(operator, active, theme_color)}
             </Box>
         );
 
     return (
         <Tooltip title={val}>
           <Box sx={sx}>
-            {iconContents(operator, active)}
+            {iconContents(operator, active, theme_color)}
           </Box>
         </Tooltip>
     );
 }
 
-function iconContents (operator, active) {
+function iconContents (operator, active, theme_color) {
     const code = operator.label.code;
 
     if (!code)
@@ -95,7 +97,7 @@ function iconContents (operator, active) {
 
     const sx = {
         fontSize:44,
-        color: active ? 'rgba(8, 156, 163, 1.0)' : '#888',
+        color: active ? `rgba(${theme_color.r}, ${theme_color.g}, ${theme_color.b}, 1.0)` : '#888',
     };
 
     if ('settings'===code)
@@ -125,11 +127,11 @@ function iconContents (operator, active) {
     return operator.label.val;
 }
 
-function text (text, active) {
+function text (text, active, theme_color) {
     return (
         <S sx={{
             fontSize:22,
-            color: active ? 'rgba(8, 156, 163, 1.0)' : '#888',
+            color: active ? `rgba(${theme_color.r}, ${theme_color.g}, ${theme_color.b}, 1.0)` : '#888',
         }}>
           {text}
         </S>

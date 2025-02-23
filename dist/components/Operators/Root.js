@@ -21,6 +21,7 @@ function Root(props) {
   var operator = props.operator;
   var onClick = props.onClick;
   var active = props.active;
+  var theme_color = props.theme_color;
   var border_width = operator.border.w;
   var width = operator.size.w;
   var height = operator.size.h;
@@ -37,7 +38,7 @@ function Root(props) {
     maxHeight: height + 'px',
     borderRadius: width + 'px',
     padding: border_width + 'px',
-    background: active ? "rgba(8, 156, 163, 1.0)" : "#888",
+    background: active ? "rgba(".concat(theme_color.r, ", ").concat(theme_color.g, ", ").concat(theme_color.b, ", 1.0)") : "#888",
     zIndex: 888
   };
   var sx_content = {
@@ -58,24 +59,24 @@ function Root(props) {
     sx: sx_content
   }, val()), type === 'text' && /*#__PURE__*/_react["default"].createElement(_Box["default"], {
     sx: sx_content
-  }, text(val, active)), type === 'icon' && icon(operator, active, val, sx_content));
+  }, text(val, active, theme_color)), type === 'icon' && icon(operator, active, val, sx_content, theme_color));
 }
-function icon(operator, active, val, sx) {
+function icon(operator, active, val, sx, theme_color) {
   if (active) return /*#__PURE__*/_react["default"].createElement(_Box["default"], {
     sx: sx
-  }, iconContents(operator, active));
+  }, iconContents(operator, active, theme_color));
   return /*#__PURE__*/_react["default"].createElement(_Tooltip["default"], {
     title: val
   }, /*#__PURE__*/_react["default"].createElement(_Box["default"], {
     sx: sx
-  }, iconContents(operator, active)));
+  }, iconContents(operator, active, theme_color)));
 }
-function iconContents(operator, active) {
+function iconContents(operator, active, theme_color) {
   var code = operator.label.code;
   if (!code) return operator.label.val;
   var sx = {
     fontSize: 44,
-    color: active ? 'rgba(8, 156, 163, 1.0)' : '#888'
+    color: active ? "rgba(".concat(theme_color.r, ", ").concat(theme_color.g, ", ").concat(theme_color.b, ", 1.0)") : '#888'
   };
   if ('settings' === code) return /*#__PURE__*/_react["default"].createElement(_Psychology["default"], {
     sx: sx
@@ -103,11 +104,11 @@ function iconContents(operator, active) {
   });
   return operator.label.val;
 }
-function text(text, active) {
+function text(text, active, theme_color) {
   return /*#__PURE__*/_react["default"].createElement(_Typography["default"], {
     sx: {
       fontSize: 22,
-      color: active ? 'rgba(8, 156, 163, 1.0)' : '#888'
+      color: active ? "rgba(".concat(theme_color.r, ", ").concat(theme_color.g, ", ").concat(theme_color.b, ", 1.0)") : '#888'
     }
   }, text);
 }

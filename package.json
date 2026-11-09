@@ -1,6 +1,6 @@
 {
     "name": "@yanqirenshi/manipulater",
-    "version": "0.0.20",
+    "version": "0.1.0",
     "description": "See `src/index.html`",
     "main": "dist/index.js",
     "directories": {
@@ -22,20 +22,27 @@
     },
     "homepage": "https://github.com/yanqirenshi/Manipulater#readme",
     "peerDependencies": {
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0"
+        "@emotion/react": "^11.11.0",
+        "@emotion/styled": "^11.11.0",
+        "@mui/icons-material": "^5.14.20 || ^6.0.0 || ^7.0.0 || ^9.0.0",
+        "@mui/material": "^5.14.20 || ^6.0.0 || ^7.0.0 || ^9.0.0",
+        "react": "^18.0.0 || ^19.0.0",
+        "react-dom": "^18.0.0 || ^19.0.0"
     },
     "devDependencies": {
         "@babel/cli": "^7.12.10",
         "@babel/core": "^7.12.10",
         "@babel/preset-env": "^7.12.11",
         "@babel/preset-react": "^7.12.10",
-        "babel-loader": "^8.2.2"
+        "@emotion/react": "^11.14.0",
+        "@emotion/styled": "^11.14.1",
+        "@mui/icons-material": "^9.2.0",
+        "@mui/material": "^9.2.0",
+        "babel-loader": "^8.2.2",
+        "react": "^19.0.0",
+        "react-dom": "^19.0.0"
     },
     "dependencies": {
-        "@emotion/react": "^11.11.1",
-        "@emotion/styled": "^11.11.0",
-        "@mui/material": "^5.14.20",
         "@yanqirenshi/beach": "^0.0.1"
     }
 }
